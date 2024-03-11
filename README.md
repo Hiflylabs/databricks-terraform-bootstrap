@@ -20,7 +20,13 @@ The purpose of this repository is to provide Terraform projects that bootstraps:
   - run 
     > az login
 
-## Instructions
+## Setup Instructions
+
+- Clone the repository
+  > git clone https://github.com/Hiflylabs/databricks-terraform-bootstrap.git 
+
+- Change the working directory to the adb-lakehouse project
+  > cd  databricks-terraform-bootstrap/projects/adb-lakehouse
 
 - Use **terraform.tfvars.template** to create **terraform.tfvars** file.
   
