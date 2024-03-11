@@ -32,8 +32,13 @@ The purpose of this repository is to provide Terraform projects that bootstraps:
 - Initialize terraform
   > cd projects/adb-lakehouse
   > terraform init
+
 - Deploy terraform project
   > terraform apply
+
+- Destroy environment (optional)
+  > terraform destroy
+
 
 ## Project structure
 A Terraform project can be implemented in a few files, but the goal in this project is to use a modular design to 
