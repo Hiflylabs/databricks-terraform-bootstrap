@@ -1,0 +1,150 @@
+#######################
+# Mandatory variables #
+#######################
+
+# -----------------------------
+# ---CONFIGURATION VARIABLES---
+# -----------------------------
+
+# Boolean flag indicating if Azure resource group need to be created and managed.
+create-azure-resource-group = <[true|false]>
+
+
+# -----------------
+# ---CREDENTIALS---
+# -----------------
+
+# The Azure subscription where the resources are created.
+azure-subscription-id = "<VALUE>"
+
+# ID of the Databricks Account.q
+dbx-account-id = "<VALUE>"
+
+#The username for the git provider.
+git-username = "<VALUE>"
+
+# Personal Access Token to access git provider.
+git-personal-access-token = "<VALUE>"
+
+
+######################
+# Optional variables #
+######################
+
+# ---------------------
+# ---AZURE VARIABLES---
+# ---------------------
+
+# The Azure region where resources are created.
+# # Valid values are available at https://github.com/claranet/terraform-azurerm-regions/blob/master/REGIONS.md
+#azure-region = "<VALUE>"
+
+# Name of the Azure resource group in which the resources are created.
+#azure-resource-group = "<VALUE>"
+
+#Map of tags to attach to Azure resources.
+/*
+tags = {
+  "owner": "<VALUE>"
+  "project": "<VALUE>"
+}
+*/
+
+
+# --------------------------
+# ---DATABRICKS VARIABLES---
+# --------------------------
+
+# SKU type of Databricks Workspace - ['standard', 'premium', 'trial'].
+#dbx-sku = "<VALUE>"
+
+# Name of the Databricks Workspace.
+#workspace_name = "<VALUE>"
+
+
+# -----------------------------
+# ---UNITY CATALOG VARIABLES---
+# -----------------------------
+
+#Name of (Azure) Access Connector for Azure Databricks.
+#dbx-access-connector-name = "<VALUE>"
+
+# Name of (Azure) Storage Account for Unity Metastore.
+# Lowercase letters and numbers (3-24).
+#metastore-storage-account-name = "<VALUE>"
+
+# Tier of Storage Account for Unity Metastore - ['Standard', 'Premium'].
+# For BlockBlobStorage and FileStorage accounts only 'Premium' is valid.
+#metastore-storage-account-tier = "<VALUE>"
+
+# Replication type of Storage Account for Unity Metastore - ['LRS', 'GRS', 'RAGRS', 'ZRS', 'GZRS', 'RAGZRS']
+#metastore-storage-account-replication-type = "<VALUE>"
+
+# Boolean value for Historical Namespace enablement.
+#metastore-storage-account-historical-namespace = <true|false>
+
+# Name of Storage Container for Unity Metastore.
+# Lowercase letters, numbers, and hyphens. Start with lowercase letter or number. Can't use consecutive hyphens. (3-63)
+#metastore-storage-container-name = "<VALUE>"
+
+# Access Type of Storage Container for Unity Metastore - ['blob', 'container', 'private'].
+#metastore-storage-container-access-type = "<VALUE>"
+
+# Name of the Unity Metastore.
+#metastore-name = "<VALUE>"
+
+# Boolean value indicating if non empty Metastore should be destroyed.
+#metastore-force-destroy = <true|false>
+
+
+# ---------------------------
+# ---DBX CLUSTER VARIABLES---
+# ---------------------------
+# Note: Unity Catalog requires 'SINGLE_USER' or 'USER_ISOLATION' data security mode.
+
+# Map of cluster configurations for Single Node clusters.
+/*
+single-user-clusters = {
+  "cluster_1" = {
+    name                    = "<VALUE>"
+    username                = "<VALUE>"
+    autotermination_minutes = <VALUE>
+    num_workers             = 0
+    data_security_mode      = "SINGLE_USER"
+  }
+}
+*/
+
+# Map of cluster configurations for Autoscaling clusters.
+/*
+autoscaling-clusters = {
+  "cluster_1" = {
+    name                    = "<VALUE>"
+    autotermination_minutes = <VALUE>
+    num_workers             = 0
+    data_security_mode      = "USER_ISOLATION"
+    min_workers             = <VALUE>
+    max_workers             = <VALUE>
+  }
+}
+*/
+
+
+# -------------------------
+# ---DBX REPOS VARIABLES---
+# -------------------------
+
+# The git provider.
+# ['gitHub', 'gitHubEnterprise', 'bitbucketCloud', 'bitbucketServer', 'azureDevOpsServices', 'gitLab',
+#  'gitLabEnterpriseEdition', 'awsCodeCommit']
+#git-provider = "<VALUE>"
+
+# Map of repositories to be imported into the Workspace.
+/*
+dbx-repos = {
+  "repo_1" = {
+    url     = "<VALUE>"
+    branch  = "<VALUE>"
+  }
+}
+*/
