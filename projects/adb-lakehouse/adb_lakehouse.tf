@@ -47,13 +47,6 @@ module "unity-catalog-metastore" {
   workspace-id                      = module.dbx-workspace.workspace_id
 }
 
-module "unity-catalog-workspace-assignment" {
-  depends_on    = [module.unity-catalog-metastore]
-  source        = "../../modules/unity-catalog-workspace-assignment"
-  metastore-id  = module.unity-catalog-metastore.metastore-id
-  workspace-id  = module.dbx-workspace.workspace_id
-}
-
 module "dbx-single-user-clusters" {
   count                             = 1
   depends_on                        = [module.unity-catalog-metastore]
