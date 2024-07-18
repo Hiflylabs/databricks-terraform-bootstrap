@@ -1,5 +1,7 @@
 # databricks-terraform-bootstrap
 
+Note: a blog post about this project is available at https://hiflylabs.com/blog/2024/7/17/automated-environment-setup-best-practices-terraform-databricks-azure
+
 ## Purpose
 
 The purpose of this repository is to provide Terraform projects that bootstraps:
